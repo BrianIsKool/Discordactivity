@@ -60,7 +60,8 @@ new_round();
 function new_round() {
   init_ar();
   init_test_users();
-  console.log(users);
+  add_state();
+  console.log('users: ', users);
   setInterval(new_tick, 2000);
 }
 
@@ -69,10 +70,13 @@ function new_tick() {
   console.log('new_tick');
 
   update_users();
-  console.log(users);
+  console.log();
+  console.log('users: ', users);
 
   add_state();
-  console.log(states);
+  console.log();
+  console.log('states: %i', states.length, JSON.stringify(states, null, 2));
+  //console.log('states: %i', states.length, convertToText(states));
 
 }
 
@@ -83,18 +87,8 @@ function update_users() {
 }
 
 function update_user(user) {
-  //console.log(id);
-  //console.log(user);
   user.x += user.dx;
   user.y += user.dy;
-  //console.log(user);
-
-  const tick_users = [];
-
-  const tick = {
-
-  }
-
 }
 
 function add_state() {
@@ -111,11 +105,10 @@ function add_state() {
     })
   }
 
-
-  //states.push
-
+  states.push(state);
 
 }
+
 /*
 setInterval(() => {
   new_tick();

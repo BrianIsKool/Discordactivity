@@ -30,7 +30,7 @@ document.querySelector('#app').innerHTML = `
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.fillStyle = "red";
-ctx.fillRect(0, 0, 150, 75);
+ctx.fillRect(0, 0, 1, 1);
 
 const arr = [];
 
